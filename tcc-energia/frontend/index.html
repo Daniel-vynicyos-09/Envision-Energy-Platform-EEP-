@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Monitor de Energia</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="imagens/logo3.png" alt="Logo" class="logo" />
+      <div class="titles">
+        <h1>Monitor de Energia</h1>
+        <p class="subtitle">COM IA DE REDE NEURAL</p>
+      </div>
+    </div>
+    <div class="meta">
+      <div class="meta-item">
+        <span class="meta-label">Última atualização</span>
+        <span id="ultimoTempo" class="meta-value">--</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="grid">
+      <div class="card large">
+        <h2>Consumo Atual</h2>
+        <div class="value-row">
+          <p id="valor" class="big-value">--</p>
+          <div id="status" class="status-pill">--</div>
+        </div>
+        <p class="small">kW (valor em tempo real)</p>
+      </div>
+
+      <div class="card">
+        <h3>Previsão</h3>
+        <p id="previsao" class="card-value">--</p>
+        <p class="small">Próximos minutos</p>
+      </div>
+
+      <div class="card">
+        <h3>Dica da IA</h3>
+        <p id="dica" class="card-value">--</p>
+      </div>
+    </section>
+
+    <section class="chart-card card">
+      <div class="chart-header">
+        <h3>Histórico de Consumo</h3>
+        <div class="chart-legend"><span class="dot"></span> Consumo (kW)</div>
+      </div>
+      <canvas id="grafico"></canvas>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>DESENVOLVIDO POR ENVISION TECH GROUP
+  </footer>
+
+  <script src="script.js"></script>
+
+<div class="chat-box" id="chatBox"></div>
+
+<div class="chat-input">
+    <input id="pergunta" placeholder="Digite sua pergunta..." />
+    <button onclick="enviar()">Enviar</button>
+</div>
+<button onclick="analisar()">📊 Analisar</button>
+<p id="analise"></p>
+</body>
+</html>
